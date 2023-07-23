@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load bootstrap5 %}
+{% load crispy_forms_tags %}
+
+{% block bootstrap5_title %}Nuevo | Vehículo{% endblock %}
+
+{% block content %}
+  <h1>Nuevo Vehículo</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">                
+      <br>
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <br>
+        <input type="submit" class="btn btn-primary" value="Agregar Vehiculo"/>
+        <input type="reset" class="btn btn-secondary" value="Cancelar"/>
+      </form>
+      </div>
+      <br>
+    </div>
+  </div>
+  <br>
+{% endblock %}
